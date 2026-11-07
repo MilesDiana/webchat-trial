@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harambee Trust Bank | Webex CC Web Chat Trial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10283f;
+    --ink-soft:#4a5d70;
+    --paper:#f7f8f6;
+    --sand:#ece6d8;
+    --teal:#0e6b66;
+    --gold:#d99a1b;
+    --line:#d8ddd9;
+    --display:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
+    --body:"Public Sans","Segoe UI",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  .demo-bar{background:var(--ink);color:#fff;font-size:14px;padding:8px 0;text-align:center}
+
+  header.site{background:#fff;border-bottom:1px solid var(--line)}
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:72px;flex-wrap:wrap}
+  .brand{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-.01em;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand-mark{width:30px;height:30px;border-radius:8px;background:var(--teal);position:relative}
+  .brand-mark::after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--gold)}
+  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:28px;flex-wrap:wrap}
+  nav a{text-decoration:none;font-weight:500;font-size:16px}
+  nav a:hover{text-decoration:underline;text-underline-offset:4px}
+  .login{background:var(--ink);color:#fff;padding:9px 18px;border-radius:6px;text-decoration:none;font-weight:600;font-size:15px}
+
+  .hero{background:var(--sand);padding:72px 0 80px}
+  .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(36px,5.2vw,62px);line-height:1.05;letter-spacing:-.025em;margin:0 0 20px}
+  .hero p.lead{font-size:19px;color:var(--ink-soft);max-width:34em;margin:0 0 28px}
+  .btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-weight:600;padding:13px 24px;border-radius:6px}
+  .btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink);margin-left:10px;padding:11px 22px}
+  .chat-hint{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px}
+  .chat-hint h2{font-family:var(--display);font-size:22px;margin:0 0 8px}
+  .chat-hint p{margin:0 0 14px;color:var(--ink-soft);font-size:15.5px}
+  .chat-hint .arrow{font-weight:600;color:var(--teal)}
+
+  section{padding:72px 0}
+  h2.sec{font-family:var(--display);font-size:clamp(28px,3.4vw,38px);letter-spacing:-.02em;margin:0 0 8px}
+  .sec-sub{color:var(--ink-soft);margin:0 0 36px;max-width:40em}
+  .products{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);background:#fff}
+  .product{padding:30px 28px;border-right:1px solid var(--line)}
+  .product:last-child{border-right:0}
+  .product h3{font-family:var(--display);font-size:22px;margin:0 0 8px}
+  .product p{margin:0 0 14px;color:var(--ink-soft);font-size:15.5px}
+  .product a{font-weight:600;color:var(--teal)}
+
+  .rates{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  table{border-collapse:collapse;width:100%;max-width:640px;font-size:16px}
+  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line)}
+  th{font-weight:600;color:var(--ink-soft);font-size:14px}
+  td:last-child,th:last-child{text-align:right}
+
+  .testing{background:var(--ink);color:#fff}
+  .testing h2.sec{color:#fff}
+  .testing .sec-sub{color:#c3cfdb}
+  .scenarios{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 40px;list-style:none;padding:0;margin:0}
+  .scenarios li{padding:14px 0;border-top:1px solid #34506b;font-size:16px}
+  .scenarios strong{display:block;font-family:var(--display);font-size:18px;margin-bottom:2px}
+  .scenarios span{color:#c3cfdb;font-size:15px}
+
+  footer{padding:36px 0;font-size:14px;color:var(--ink-soft)}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    .hero .wrap{grid-template-columns:1fr;gap:36px}
+    .products{grid-template-columns:1fr}
+    .product{border-right:0;border-bottom:1px solid var(--line)}
+    .product:last-child{border-bottom:0}
+    .scenarios{grid-template-columns:1fr}
+    .btn.alt{margin:10px 0 0}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-bar">Demo site for contact centre web chat testing. This is not a real bank.</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>Harambee Trust</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#products">Accounts and cards</a></li>
+        <li><a href="#rates">Loan rates</a></li>
+        <li><a href="#testing">Test scenarios</a></li>
+      </ul>
+    </nav>
+    <a class="login" href="#top">Online banking</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Banking that answers when you ask.</h1>
+        <p class="lead">Open an account, apply for a loan or sort out a card issue. If you get stuck, chat with an agent from any page.</p>
+        <a class="btn" href="#products">Open an account</a>
+        <a class="btn alt" href="#rates">See loan rates</a>
+      </div>
+      <aside class="chat-hint" aria-label="Chat help">
+        <h2>Need help now?</h2>
+        <p>Use the chat button at the bottom right of this page. An agent will pick up your conversation.</p>
+        <p class="arrow">Chat is open Mon–Sat, 8am–6pm EAT</p>
+      </aside>
+    </div>
+  </div>
+
+  <section id="products">
+    <div class="wrap">
+      <h2 class="sec">Accounts and cards</h2>
+      <p class="sec-sub">Everyday banking for individuals, small businesses and groups.</p>
+      <div class="products">
+        <div class="product">
+          <h3>Current account</h3>
+          <p>No monthly ledger fee on balances above KES 50,000. Free mobile and online banking.</p>
+          <a href="#top">Compare accounts</a>
+        </div>
+        <div class="product">
+          <h3>Debit and credit cards</h3>
+          <p>Lock a lost card instantly, set travel notices and request a replacement.</p>
+          <a href="#top">Manage your card</a>
+        </div>
+        <div class="product">
+          <h3>Business banking</h3>
+          <p>Payroll, merchant payments and trade finance with a dedicated relationship manager.</p>
+          <a href="#top">Talk to business team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rates" class="rates">
+    <div class="wrap">
+      <h2 class="sec">Loan rates</h2>
+      <p class="sec-sub">Sample figures for demo purposes only.</p>
+      <table>
+        <thead><tr><th>Product</th><th>Term</th><th>Rate p.a.</th></tr></thead>
+        <tbody>
+          <tr><td>Personal loan</td><td>Up to 48 months</td><td>13.5%</td></tr>
+          <tr><td>Asset finance</td><td>Up to 60 months</td><td>14.0%</td></tr>
+          <tr><td>Mortgage</td><td>Up to 20 years</td><td>12.0%</td></tr>
+          <tr><td>Business overdraft</td><td>12 months, renewable</td><td>15.5%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="testing" class="testing">
+    <div class="wrap">
+      <h2 class="sec">Chat test scenarios</h2>
+      <p class="sec-sub">Prompts testers can use to exercise routing, queues and agent desktop behaviour.</p>
+      <ul class="scenarios">
+        <li><strong>Card blocked</strong><span>Customer says their debit card was swallowed by an ATM.</span></li>
+        <li><strong>Loan enquiry</strong><span>Customer asks about eligibility for a personal loan.</span></li>
+        <li><strong>Mobile banking login</strong><span>Customer cannot log in after changing phones.</span></li>
+        <li><strong>Failed transfer</strong><span>Customer was debited but the recipient did not get the money.</span></li>
+        <li><strong>After-hours chat</strong><span>Start a chat outside working hours to test the closed-hours flow.</span></li>
+        <li><strong>Transfer to another queue</strong><span>Agent moves the chat from General Support to Cards.</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Harambee Trust Bank is a fictional brand used for a Webex Contact Center trial.</span>
+    <span>Test build</span>
+  </div>
+</footer>
+
+<!-- =====================================================================
+     WEBEX CONTACT CENTER WEB CHAT
+     Paste the snippet generated for your web chat asset (Webex Connect /
+     Control Hub digital channel) here, just before </body>.
+     Also add this site's origin to the asset's allowed domains, e.g.
+       https://<username>.github.io
+       http://localhost:8080 (local testing)
+     ===================================================================== -->
+
+<!-- PASTE WEBEX CHAT SNIPPET HERE -->
+
+</body>
+</html>
